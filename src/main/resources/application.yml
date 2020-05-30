@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: hyp
+  profiles:
+    active: dev
+
+logging:
+  level:
+    com.example.order.mapper: DEBUG
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.hyp.entity
+  global-config:
+    db-config:
+      id-type: id_worker
+      field-strategy: default
+      db-type: mysql
+    banner: true #关闭MyBatis-Plus自带的打印Banner
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: false
